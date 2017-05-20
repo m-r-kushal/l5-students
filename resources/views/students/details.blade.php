@@ -2,7 +2,8 @@
 
 
 @section('body-content')
-<h1 class="text-center">Hello {{$user_name}}</h1>
+<h1>Students</h1>
+<hr>
 
 <p class="text-right">
 	<a class="btn btn-primary" href="{{action('StudentsController@index')}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>

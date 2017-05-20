@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,10 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
+	Route::get('/',            'StudentsController@index');
+	Route::get('{id}/details', 'StudentsController@details');
+	Route::get('create',       'StudentsController@create');
+	Route::post('store',       'StudentsController@store');
+	Route::get('{student}/edit',       'StudentsController@edit');
+	Route::post('update',       'StudentsController@update');
 });
-
-Route::get('students/index', 'StudentsController@index');
-Route::get('students/{id}/details', 'StudentsController@details');

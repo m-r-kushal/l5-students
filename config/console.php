@@ -36,5 +36,5 @@ return array(
     |
     */
 
-    'asset_url' => '/vendor/console'
+    'asset_url' => Config('app.url').'/public/vendor/console'
 );

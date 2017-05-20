@@ -2,20 +2,24 @@
 
 
 @section('body-content')
-	<h1 class="text-center">Hello {{$user_name}}</h1>
+	<h1>Students</h1>
+	<hr>
 
+	<p class="alert alert-info text-right">
+		<a class="btn btn-xs btn-primary" href="{{action('StudentsController@create')}}" role="button"><i class="glyphicon glyphicon-plus"></i> Add</a>
+	</p>
 
 	<table class="table table-hover">
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>name</th>
-				<th>roll</th>
-				<th>email</th>
-				<th>class_id</th>
-				<th>school_id</th>
-				<th>gender</th>
-				<th>address</th>
+				<th>Name</th>
+				<th>Roll</th>
+				<th>E-mail</th>
+				<th>Class</th>
+				<th>School</th>
+				<th>Gender</th>
+				<th>Address</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -30,7 +34,10 @@
 				<td>{{$s->school->school_name}}</td>
 				<td>{{$s->gender}}</td>
 				<td>{{$s->address}}</td>
-				<td><a href="{{action('StudentsController@details',$s->id)}}">Details</a></td>
+				<td>
+					<a href="{{action('StudentsController@details',$s->id)}}">Details</a>
+					<a href="{{action('StudentsController@edit',$s)}}">Edit</a>
+				</td>
 			</tr>
 			@endforeach
 
