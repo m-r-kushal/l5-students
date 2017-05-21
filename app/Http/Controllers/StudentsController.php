@@ -117,4 +117,14 @@ class StudentsController extends Controller
         return redirect()->action('StudentsController@index');
 
     }
+
+    public function delete(Student $student)
+    {
+        $student->subjects()->detach();
+        $student->delete();
+
+        return redirect()->action('StudentsController@index');
+    }
+
+
 }

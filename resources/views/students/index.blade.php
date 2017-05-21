@@ -1,6 +1,4 @@
 @extends('layout')
-
-
 @section('body-content')
 	<h1>Students</h1>
 	<hr>
@@ -20,7 +18,7 @@
 				<th>School</th>
 				<th>Gender</th>
 				<th>Address</th>
-				<th>Action</th>
+				<th width="15%">Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,13 +33,12 @@
 				<td>{{$s->gender}}</td>
 				<td>{{$s->address}}</td>
 				<td>
-					<a href="{{action('StudentsController@details',$s->id)}}">Details</a>
-					<a href="{{action('StudentsController@edit',$s)}}">Edit</a>
+					<a class="btn btn-xs btn-success" href="{{action('StudentsController@details',$s->id)}}">Details</a>
+					<a class="btn btn-xs btn-primary" href="{{action('StudentsController@edit',$s)}}">Edit</a>
+					<a class="btn btn-xs btn-danger"  href="{{action('StudentsController@delete',$s)}}" onclick="return confirm('Are you sure?')">Delete</a>
 				</td>
 			</tr>
 			@endforeach
 
-
-		</tbody>
 	</table>
 @endsection
