@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('layouts.app')
 
 
-@section('body-content')
+@section('content')
 <h1>Students</h1>
 <hr>
 

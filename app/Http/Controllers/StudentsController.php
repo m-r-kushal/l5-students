@@ -11,6 +11,11 @@ use App\Subject;
 
 class StudentsController extends Controller
 {
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
+
     public function index()
     {
     	$students = Student::with('school','_class')->get();

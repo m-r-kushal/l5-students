@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('layouts.app')
 
 
-@section('body-content')
+@section('content')
 <div class="row">
 	<div class="col-lg-offset-2 col-lg-8">
 		<form action="{{action('StudentsController@update')}}" class="form-horizontal" method="POST" role="form">

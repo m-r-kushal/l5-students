@@ -28,6 +28,8 @@
 
 Route::group(['middleware' => ['web']], function () {
     //
+	Route::auth();
+
 	Route::get('/',            	   'StudentsController@index');
 	Route::get('{id}/details', 	   'StudentsController@details');
 	Route::get('create',       	   'StudentsController@create');
@@ -36,3 +38,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('update',          'StudentsController@update');
 	Route::get('{student}/delete', 'StudentsController@delete');
 });
+
+
+Route::get('/home', 'HomeController@index');

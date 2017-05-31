@@ -21,7 +21,7 @@
 		@include('top_nav')
 
 		<div class="container">
-			@yield('body-content')
+			@yield('content')
 		</div>
 
 
